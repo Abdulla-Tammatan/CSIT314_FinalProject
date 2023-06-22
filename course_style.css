@@ -149,5 +149,20 @@ course td {
 h3 {
     padding-top: 18px;
 }
-
+.quiz {
+    text-decoration: none;
+    color: black;
+}
+.assignment {
+    text-decoration: none;
+    color: black;
+}
+.grade {
+    text-decoration: none;
+    color: black;
+}
+.submission {
+    text-decoration: none;
+    color: black;
+}
 
