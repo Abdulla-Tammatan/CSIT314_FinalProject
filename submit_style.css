@@ -1,0 +1,104 @@
+﻿body {
+    background-color: white;
+    font-family: 'Franklin Gothic';
+    margin: 0 auto;
+}
+
+.navigation {
+    overflow: hidden;
+    background: #8397DF;
+}
+
+.nav {
+    display: fixed;
+    float: right;
+    color: black;
+    text-align: center;
+    padding: 25px 25px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.homescreen {
+    display: block;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+}
+
+.navigation a:hover {
+    background-color: #c8dbde;
+    color: black;
+    cursor: pointer;
+}
+
+.submissionContainer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-bottom: 15px;
+    margin-top: 20px;
+    width:100%;
+}
+
+h3 {
+    margin-top: 10px;
+    margin-left: 40px;
+}
+
+.submission {
+    margin-left: 40px;
+}
+
+label {
+    padding-left: 20px;
+}
+
+.col1 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    background-color: #8397DF;
+    border-radius: 5px;
+}
+
+.col2 {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    background-color: #F1EFE7;
+    border-radius: 5px;
+}
+
+.submission td p {
+    padding-left: 20px;
+    margin: 10px;
+}
+
+#comments {
+    margin-left: 20px;
+    margin-right: 670px;
+}
+
+#terms {
+    font-size: small;
+    color: black;
+    margin-left: 40px;
+}
+
+#submit {
+    font-size: large;
+    display: block;
+    margin: 0 auto;
+    background-color: #8397DF;
+    cursor: pointer;
+    padding: 16px;
+    border: none;
+    color: black;
+    border-radius: 5px;
+    width: 30%;
+    font-weight: 600;
+}
+
+#errorMessage {
+    color: darkred;
+    margin-left: 40px;
+}

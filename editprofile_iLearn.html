@@ -1,0 +1,68 @@
+<html>
+<head>
+    <link rel="stylesheet" href="editprofile_iLearncss.css" />
+    <script src="editprofile_iLearnjs.js"></script>
+</head>
+
+<body>
+    <div class="navigation">
+        <a class="homescreen" href="iLearn.html"><img class="logo" src="iLearnLogo.png" alt="LOGO" width="184" /> </a>
+        <a class="nav" href="profile.html"><img src="User.png" alt="login LOGO" width="30" /></a>
+        <a class="nav" href="https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&ct=1687376172&rver=7.0.6737.0&wp=MBI_SSL&wreply=https%3a%2f%2foutlook.live.com%2fowa%2f%3fnlp%3d1%26RpsCsrfState%3d60ab72b8-ac12-3d53-8389-39f19e0f0cb0&id=292841&aadredir=1&CBCXT=out&lw=1&fl=dob%2cflname%2cwld&cobrandid=90015"><img src="email.png" alt="email LOGO" width="30" /> </a>
+        <a class="nav" href="Help"><img src="help.png" alt="help LOGO" width="30" /></a>
+
+    </div>
+         <!--Form for registration-->
+        <form action="HOMESCREEN.html" method="post" onsubmit="return validateForm()">
+            <div class="editContainer">
+                <p class="editAccount">Edit profile</p>
+                <img src="User.png" alt="user" class="image" width="30" />
+                <a class="editImage" href="#profilePhoto"><p>Change profile photo</p></a><br />
+                <table class="editTable">
+                    <tr>
+                        <td>
+                            <label>First Name:</label><br />
+                            <input id="fname" type="text" name="firstname" size="30" value="John" pattern="[A-Za-z]{2,20}" required /><br />
+                        </td>
+                        <td>
+                            <label>Last Name:</label><br />
+                            <input id="lname" type="text" name="lastname" size="30" value="Smith" pattern="[A-Za-z]{2,20}" required /><br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>Email:</label><br />
+                            <input id="email" type="text" value="johnsmith@gmail.com" size="30" required /><br />
+                            <span id="emailError"></span>
+                        </td>
+                        <td>
+                            <label>Phone Number:</label><br />
+                            <input id="phone" type="tel" name="phone" value="+971501234567" size="30" required /><br />
+                            <span id="phoneError"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Address:</label><br />
+                            <input id="address" type="text" name="address" value="Abu dhabi" size="30" /><br />
+                            <span></span>
+                        </td>
+                        <td>
+                            <label>Password:</label><br />
+                            <div class="passwordContainer">
+                                <input id="password" type="password" name="pwd" placeholder="********" size="30" required /><br />
+                                <img class="toggle" src="eye.jpeg" onclick="toggle()" width="20" />
+                            </div>
+                            <span id="passError"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                    </tr>
+                </table>
+                <input id="edit" type="submit" value="SAVE CHANGES" />
+            </div>
+        </form>
+</body>
+</html>

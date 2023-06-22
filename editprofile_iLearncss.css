@@ -1,0 +1,109 @@
+body {
+    background-color: white;
+    font-family: 'Franklin Gothic';
+    margin: 0 auto;
+}
+
+.navigation {
+    overflow: hidden;
+    background: #8397DF;
+}
+
+.nav {
+    display: fixed;
+    float: right;
+    color: black;
+    text-align: center;
+    padding: 25px 25px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.homescreen {
+    display: block;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+}
+
+.navigation a:hover {
+    background-color: #c8dbde;
+    color: black;
+    cursor: pointer;
+}
+
+.editAccount {
+    font-size: 30px;
+}
+
+.editContainer {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    background-color: #f1efe7;
+}
+table {
+    padding:0;
+    margin:0;
+    border-collapse: collapse;
+    margin-left:auto;
+    margin-right:auto;   
+    border-radius: 20px;
+}
+
+.passwordContainer {
+    position: relative;
+}
+
+#edit {
+    font-size: large;
+    display: block;
+    margin: 0 auto;
+    background-color: #8397DF;
+    cursor: pointer;
+    padding: 16px 32px;
+    border: none;
+    color: black;
+    font-weight: 600;
+}
+
+span {
+    color: red;
+    font-size: small;
+    display: block;
+    width: 165px;
+    padding-bottom: 5px;
+}
+
+.image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.editImage {
+    text-align:center;
+    font-size:small;
+    text-decoration:none;
+    color:black;
+}
+.toggle {
+    position: absolute;
+    top: 16px;
+    right: 8px;
+    cursor: pointer;
+}
+input {
+    border-radius: 5px;
+    background-color: floralwhite;
+    border: none;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}

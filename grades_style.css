@@ -1,0 +1,86 @@
+﻿body {
+    background-color: white;
+    font-family: 'Franklin Gothic';
+    margin: 0 auto;
+}
+
+.navigation {
+    overflow: hidden;
+    background: #8397DF;
+}
+
+.nav {
+    display: fixed;
+    float: right;
+    color: black;
+    text-align: center;
+    padding: 25px 25px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.homescreen {
+    display: block;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+}
+
+.navigation a:hover {
+    background-color: #c8dbde;
+    color: black;
+    cursor: pointer;
+}
+
+.gradesContainer {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #F1EFE7;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-right: 530px;
+    padding-left: 530px;
+    border-radius: 15px;
+}
+
+h1 {
+    padding-left: 30px;
+}
+
+td {
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size:large;
+}
+
+th {
+    padding-left: 18px;
+    padding-right: 30px;
+    font-size: 26px;
+}
+
+button {
+    font-size: large;
+    display: block;
+    margin: 0 auto;
+    background-color: #8397DF;
+    cursor: pointer;
+    padding: 16px 32px;
+    border: none;
+    color: black;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+#gpa {
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: large;
+}
+
+#grade_status {
+    color: darkred;
+}

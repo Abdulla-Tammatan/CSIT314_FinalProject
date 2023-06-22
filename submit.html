@@ -1,0 +1,156 @@
+﻿<html>
+<head>
+    <title>Submission</title>
+    <!--Linking external CSS file-->
+    <link rel="stylesheet" href="submit_style.css" />
+</head>
+
+<body>
+    <div class="navigation">
+        <a class="homescreen" href="iLearn.html"><img class="logo" src="iLearnLogo.png" alt="LOGO" width="184" /> </a>
+        <a class="nav" href="profile.html"><img src="User.png" alt="login LOGO" width="30" /></a>
+        <a class="nav" href="https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&ct=1687376172&rver=7.0.6737.0&wp=MBI_SSL&wreply=https%3a%2f%2foutlook.live.com%2fowa%2f%3fnlp%3d1%26RpsCsrfState%3d60ab72b8-ac12-3d53-8389-39f19e0f0cb0&id=292841&aadredir=1&CBCXT=out&lw=1&fl=dob%2cflname%2cwld&cobrandid=90015"><img src="email.png" alt="email LOGO" width="30" /> </a>
+        <a class="nav" href="Help"><img src="help.png" alt="help LOGO" width="30" /></a>
+
+    </div>
+
+    <div class="submissionContainer">
+        <h3>ESSAY SUBMISSION</h3>
+        <table class="submission">
+            <tr>
+                <td class="col1"><label>SUBMISSION TITLE</label></td>
+                <td class="col2"><p>English Paper 2 Submission</p></td>
+            </tr>
+            <tr>
+                <td class="col1"><label>SUBMISSION STATUS</label></td>
+                <td class="col2" id="submission"><p id="status">Not Attempted</p></td>
+            </tr>
+            <tr>
+                <td class="col1"><label>GRADE</label></td>
+                <td class="col2"><p id="grade">Not Graded</p></td>
+            </tr>
+            <tr>
+                <td class="col1"><label>DATE POSTED</label></td>
+                <td class="col2"><p id="post_date">Date</p></td>
+            </tr>
+            <tr>
+                <td class="col1"><label>DUE DATE</label></td>
+                <td class="col2"><p id="due_date">Due date</p></td>
+            </tr>
+            <tr>
+                <td class="col1"><label>TIME REMAINING</label></td>
+                <td class="col2"><p id="remain">Remaining Time</p></td>
+            </tr>
+            <tr>
+                <td class="col1"><label>ADD SUBMISSION</label></td>
+                <td class="col2"><p><input id="submission_files" type="file" multiple /></p></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="col2"><p>Comments</p><textarea id="comments" cols="100" rows="5"></textarea></td>
+            </tr>
+        </table>
+        <p><input type="checkbox" id="terms"> I acknowlege that the assignment submitted was my own work and all tasks were completed in accordance to the school's plaigarism policy.</p>
+        <span id="errorMessage"></span><br />
+        <button id="submit" type="submit" onclick="submit()">SUBMIT</button>
+    </div>
+    <script>
+        //displaying the dates
+        var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        var postDay = new Date("2023-06-18 08:30");
+
+        document.getElementById("post_date").innerHTML = postDay.toLocaleDateString('en-GB') + " " + days[postDay.getDay()] + " " + postDay.getHours() + ":" + postDay.getMinutes();
+
+        var dueDate = new Date("2023-06-20 23:59");
+
+        //display the due date
+        document.getElementById("due_date").innerHTML = dueDate.toLocaleDateString('en-GB') + " " + days[dueDate.getDay()] + " " + dueDate.getHours() + ":" + dueDate.getMinutes();
+
+        //calculating the remaining time
+        var today = new Date();
+
+        //calculating the difference between time
+        const differentTime = Math.abs(today - dueDate);
+
+        //calculating the number of days
+        const difference = Math.floor(differentTime / (1000 * 60 * 60 * 24));
+
+        //calculating the number of hours
+        const hours = Math.abs(today.getHours() - dueDate.getHours());
+
+        //assignment is within timeframe
+        if ((today <= dueDate) == true) {
+            document.getElementById("remain").innerHTML = difference + " days and " + hours + " hours remaining";
+        }
+
+        //assignment is overdue
+        else if ((today <= dueDate) == false) {
+            document.getElementById("remain").innerHTML = difference + " days and " + hours + " hours overdue";
+            document.getElementById("remain").style.color = "red";
+        }
+    </script>
+</body>
+</html>
+
+<script>
+
+    //checking form functions
+    function check() {
+        //checking if file types match
+        var file = document.getElementById('submission_files');
+
+        var filePath = file.value;
+
+        // Allowing file type
+        var allowed = /(\.png|\.jpg|\.jpeg|\.pdf|\.zip|\.docx)$/i;
+
+        if (file.value == '') {
+            alert("Please select a file");
+            return false;
+        }
+
+        if (!allowed.exec(filePath)) {
+            alert('Invalid file type.');
+            file.value = '';
+            return false;
+        }
+        checkBox();
+        return true;
+    }
+
+    //checking if the user terms are accepted
+    function checkBox() {
+        var check = document.getElementById("terms").checked;
+        if (check == false) {
+            document.getElementById("errorMessage").innerHTML = "Please agree to the terms and conditions.";
+            document.getElementById("errorMessage").style.color = "red";
+            return false;
+        }
+        else {
+            document.getElementById("errorMessage").innerHTML = "";
+        }
+        submissionStatus();
+        return true;
+    }
+
+    //checking submission status
+    function submissionStatus() {
+        var subDate = new Date();
+
+        //submitted early
+        if ((subDate <= dueDate) == true) {
+            document.getElementById("status").innerHTML = "Submitted Early";
+            document.getElementById("submission").style.backgroundColor = "#CFFBCF";
+        }
+
+        //submitted late
+        else if ((subDate <= dueDate) == false){
+            document.getElementById("status").innerHTML = "Submitted Late";
+            document.getElementById("submission").style.backgroundColor = "#FFCCCB";
+        }
+    }
+
+    function submit() {
+        check();
+    }
+</script>
+

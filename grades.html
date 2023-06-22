@@ -1,31 +1,38 @@
-<!DOCTYPE html>
+<html>
 <head>
     <title>Grades</title>
+    <!--Linking external CSS file-->
+    <link rel="stylesheet" href="grades_style.css" />
 </head>
+
 <body>
-    <div class="main__body">
-        <h1>Grades</h1>
-        <table id="grade-table" border="1">
+    <div class="navigation">
+        <a class="homescreen" href="iLearn.html"><img class="logo" src="iLearnLogo.png" alt="LOGO" width="184" /> </a>
+        <a class="nav" href="profile.html"><img src="User.png" alt="login LOGO" width="30" /></a>
+        <a class="nav" href="https://login.live.com/login.srf?wa=wsignin1.0&rpsnv=13&ct=1687376172&rver=7.0.6737.0&wp=MBI_SSL&wreply=https%3a%2f%2foutlook.live.com%2fowa%2f%3fnlp%3d1%26RpsCsrfState%3d60ab72b8-ac12-3d53-8389-39f19e0f0cb0&id=292841&aadredir=1&CBCXT=out&lw=1&fl=dob%2cflname%2cwld&cobrandid=90015"><img src="email.png" alt="email LOGO" width="30" /> </a>
+        <a class="nav" href="Help"><img src="help.png" alt="help LOGO" width="30" /></a>
+    </div>
+    <h1>Grades</h1>
+    <div class="gradesContainer">
+        <p id="grade_status"></p>
+        <table id="gradeTable">
             <tr>
                 <th>Subject</th>
                 <th>Credit</th>
                 <th>Grade</th>
             </tr>
         </table>
-        <div id = "gpa"></div><br/>
-        <button onclick="display_grades()">Display grades</button>
+        <div id="gpa"></div><br />
+        <button onclick="checkPoints()">Display grades</button>
         <button onclick="calculate_gpa()">Calculate GPA</button>
     </div>
     <script>
-
-        var button_count = 0;
-
         subject1 = {
-            name: "Computer science",
+            name: "Science",
             credits: 3,
             grade_points: {
-                grade:"B",
-                points:3
+                grade: "B",
+                points: 3
             }
         }
 
@@ -33,8 +40,8 @@
             name: "English",
             credits: 4,
             grade_points: {
-                grade:"A",
-                points:4
+                grade: "A",
+                points: 4
             }
         }
 
@@ -42,21 +49,38 @@
             name: "Mathematics",
             credits: 4,
             grade_points: {
-                grade:"B",
-                points:3
+                grade: "B",
+                points: 4
             }
         }
 
-        var subjects = [subject1,subject2,subject3];
+        var subjects = [subject1, subject2, subject3];
 
-        function display_grades(){
+        var button_count = 0;
 
-            if(button_count == 0){
 
-                let table = document.getElementById("grade-table");
+        function checkPoints() {
+            //checking if the points entered are not valid numbers
+            var point;
+            for (var i = 0; i < subjects.length; i++) {
+                point = subjects[i].grade_points.points;
+                if (point < 0 || point > 4) {
+                    document.getElementById("grade_status").innerHTML = "Grades are not yet available";
+                    return false;
+                } //if
+            } //for
+            display_grades();
 
-                for(var i = 0; i < subjects.length; i++) {
-                    var row = table.insertRow(-1); 
+        } //checkPoints()
+
+
+        function display_grades() {
+            if (button_count == 0) {
+
+                let table = document.getElementById("gradeTable");
+
+                for (var i = 0; i < subjects.length; i++) {
+                    var row = table.insertRow(-1);
 
                     var subject = row.insertCell(0);
                     var credit = row.insertCell(1);
@@ -72,40 +96,41 @@
 
         }
 
-        function calculate_gpa(){
+        function calculate_gpa() {
+            if (checkPoints() == false) {
+                return false;
+            }
 
             var total_points_earned = 0;
             var total_credits_earned = 0;
             var GPA = 0;
 
-            for(var i = 0; i < subjects.length; i++) {
+            for (var i = 0; i < subjects.length; i++) {
                 var grade_points = subjects[i].credits * subjects[i].grade_points.points;
                 total_points_earned += grade_points;
                 total_credits_earned += subjects[i].credits;
             }
 
-            GPA = total_points_earned/total_credits_earned;
+            GPA = total_points_earned / total_credits_earned;
             GPA = GPA.toFixed(2);
 
             var comment;
 
-            if(GPA>=3.5){
+            if (GPA >= 3.5) {
                 comment = "Outstanding";
-                if(GPA==4){
-                    comment += ". Perfect score." 
+                if (GPA == 4) {
+                    comment += ". Perfect score."
                 }
-            }
-            else if(GPA>=3){
+            } else if (GPA >= 3) {
                 comment = "Good";
-            }
-            else if(GPA>=2.5)
+            } else if (GPA >= 2.5)
                 comment = "Average";
-            else{
+            else {
                 comment = "Need to perform better";
             }
 
-            document.getElementById("gpa").innerHTML = "<p>GPA: " + GPA + "<br>" + "Performance: " + comment+ "</p>";
-
+            document.getElementById("gpa").innerHTML = "<p>GPA: " + GPA + "<br>" + "Performance: " + comment + "</p>";
         }
     </script>
 </body>
+</html>

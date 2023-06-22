@@ -1,0 +1,16 @@
+body {
+    background-color: floralwhite;
+    font-family: 'Franklin Gothic';
+    margin: 0 auto;
+}
+.card {
+   
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+.title {
+    color: grey;
+    font-size: 18px;
+}

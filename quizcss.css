@@ -1,0 +1,55 @@
+body {
+    background-color: white;
+    font-family: 'Franklin Gothic';
+    margin: 0 auto;
+}
+.navigation {
+    overflow: hidden;
+    background: #8397DF;
+}
+
+.nav {
+    display: fixed;
+    float: right;
+    color: black;
+    text-align: center;
+    padding: 25px 25px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.homescreen {
+    display: block;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+}
+
+.navigation a:hover {
+    background-color: #c8dbde;
+    color: black;
+    cursor: pointer;
+}
+.quizContainer {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    background-color: #8397DF;
+}
+
+input {
+    border-radius: 5px;
+    background-color: #f1efe7;
+    border: none;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
