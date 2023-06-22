@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<head>
+    <title>Grades</title>
+</head>
+<body>
+    <div class="main__body">
+        <h1>Grades</h1>
+        <table id="grade-table" border="1">
+            <tr>
+                <th>Subject</th>
+                <th>Credit</th>
+                <th>Grade</th>
+            </tr>
+        </table>
+        <div id = "gpa"></div><br/>
+        <button onclick="display_grades()">Display grades</button>
+        <button onclick="calculate_gpa()">Calculate GPA</button>
+    </div>
+    <script>
+
+        var button_count = 0;
+
+        subject1 = {
+            name: "Computer science",
+            credits: 3,
+            grade_points: {
+                grade:"B",
+                points:3
+            }
+        }
+
+        subject2 = {
+            name: "English",
+            credits: 4,
+            grade_points: {
+                grade:"A",
+                points:4
+            }
+        }
+
+        subject3 = {
+            name: "Mathematics",
+            credits: 4,
+            grade_points: {
+                grade:"B",
+                points:3
+            }
+        }
+
+        var subjects = [subject1,subject2,subject3];
+
+        function display_grades(){
+
+            if(button_count == 0){
+
+                let table = document.getElementById("grade-table");
+
+                for(var i = 0; i < subjects.length; i++) {
+                    var row = table.insertRow(-1); 
+
+                    var subject = row.insertCell(0);
+                    var credit = row.insertCell(1);
+                    var grade = row.insertCell(2);
+
+                    subject.innerText = subjects[i].name;
+                    credit.innerText = subjects[i].credits;
+                    grade.innerText = subjects[i].grade_points.grade;
+                }
+
+                button_count++;
+            }
+
+        }
+
+        function calculate_gpa(){
+
+            var total_points_earned = 0;
+            var total_credits_earned = 0;
+            var GPA = 0;
+
+            for(var i = 0; i < subjects.length; i++) {
+                var grade_points = subjects[i].credits * subjects[i].grade_points.points;
+                total_points_earned += grade_points;
+                total_credits_earned += subjects[i].credits;
+            }
+
+            GPA = total_points_earned/total_credits_earned;
+            GPA = GPA.toFixed(2);
+
+            var comment;
+
+            if(GPA>=3.5){
+                comment = "Outstanding";
+                if(GPA==4){
+                    comment += ". Perfect score." 
+                }
+            }
+            else if(GPA>=3){
+                comment = "Good";
+            }
+            else if(GPA>=2.5)
+                comment = "Average";
+            else{
+                comment = "Need to perform better";
+            }
+
+            document.getElementById("gpa").innerHTML = "<p>GPA: " + GPA + "<br>" + "Performance: " + comment+ "</p>";
+
+        }
+    </script>
+</body>
