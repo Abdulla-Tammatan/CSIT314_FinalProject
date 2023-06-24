@@ -1,0 +1,82 @@
+﻿body {
+    background-color: rgb(44, 50, 72);
+    font-family: Franklin Gothic;
+}
+
+.loginForm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    height: fit-content;
+    font-size: large;
+    border-radius: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    background-color: #8397DF;
+}
+
+.passwordContainer {
+    position: relative;
+}
+
+.toggle {
+    position: absolute;
+    top: 15px;
+    right: 8px;
+    cursor: pointer;
+}
+
+input {
+    border-radius: 5px;
+}
+
+#username {
+    background-color: floralwhite;
+    border: none;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+#password {
+    background-color: floralwhite;
+    border: none;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+#login {
+    font-size: large;
+    font-weight: 600;
+    display: block;
+    margin: 0 auto;
+    background-color: rgb(44, 50, 72);
+    cursor: pointer;
+    padding: 16px 32px;
+    border: none;
+    color: aliceblue;
+}
+
+#forgotPassword {
+    font-size: medium;
+    color: black;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+span {
+    color: darkred;
+    font-size: medium;
+    width:336px;
+}
+

@@ -1,5 +1,5 @@
 body {
-    background-color: floralwhite;
+    background-color: white;
     font-family: 'Franklin Gothic';
     margin: 0 auto;
 }
@@ -37,7 +37,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     padding-bottom: 15px;
-    /*margin-top: 20px;*/
+    margin-top: 20px;
     width: 100%;
 }
 
@@ -75,14 +75,7 @@ label {
 
 #comments {
     margin-left: 20px;
-    margin-right: 400px;
-    /*margin-right: auto;*/
-}
-
-#terms {
-    font-size: small;
-    color: black;
-    margin-left: 40px;
+    margin-right: 670px;
 }
 
 #terms {

@@ -64,7 +64,7 @@
     padding-left: 20px;
     position: absolute;
     left: 0.75%;
-    top: 45%;
+    top: 35%;
     background-color: #F1EFE7;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -78,7 +78,7 @@
     padding-left: 20px;
     position: absolute;
     left: 57%;
-    top: 45%;
+    top: 35%;
     background-color: #F1EFE7;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -93,7 +93,7 @@
     padding-left: 50px;
     position: absolute;
     right: 0.75%;
-    top: 45%;
+    top: 35%;
     background-color: #F1EFE7;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -104,15 +104,13 @@
     padding: 10px;
     position: absolute;
     left: 50%;
-    top: 64%;
+    top: 49%;
     transform: translateX(-50%);
     background-color: #8397DF;
-    padding-right: 150px;
-    padding-left: 150px;
-    /*    padding-top: 20px;
-    padding-bottom: 320px;
-    padding-right: 610px;
-    padding-left: 610px;*/
+    padding-right: 171px;
+    padding-left: 171px;
+    padding-top: 60px;
+    padding-bottom: 60px;
     border-radius: 15px;
 }
 
@@ -127,40 +125,39 @@ p{
 }
 
 .course {
-    padding: 30px 50px 30px 50px;
-    width: 20%;
-    height:200px;
     text-align: center;
     padding: 10px;
 }
 
-course td {
-
-}
 
 .option {
-
-    padding: 25px 75px 25px 75px;
+    padding: 60px 90px 60px 90px;
     height: 98px;
     text-align: center;
     background-color: #F1EFE7;
     border-radius: 15px;
+    margin-left: 20px;
 }
+
 h3 {
     padding-top: 18px;
 }
+
 .quiz {
     text-decoration: none;
     color: black;
 }
+
 .assignment {
     text-decoration: none;
     color: black;
 }
+
 .grade {
     text-decoration: none;
     color: black;
 }
+
 .submission {
     text-decoration: none;
     color: black;

@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Login</title>
+    <!--Linking external CSS file-->
+    <link rel="stylesheet" href="login_style.css" />
+</head>
+<body>
+    <img class="logo" src="logo1.png" alt="LOGO" />
+    <div class="loginForm">
+        <!--Form for username and password-->
+        <form action="iLearn_home.html" method="post" onsubmit="return validateUser()">
+            <label>Username: </label><br />
+            <input id="username" type="text" name="username" size="30" required /><br />
+            <label>Password: </label><br />
+            <div class="passwordContainer">
+                <input id="password" type="password" name="password" size="30" required />
+                <img class="toggle" src="eye.jpeg" onclick="toggle()" width="20" /><br />
+            </div>
+            <span id="passwordUsernameError"></span><br /><br />
+            <input id="login" type="submit" value="LOGIN" onclick="validateUser()"/><br />
+        </form>
+        <!--Prompt for forgot password-->
+        <p id="forgotPassword" onclick="forgotPassword()">Forgot Password?</p><br />
+    </div>
+</body>
+</html>
+
+<script>
+    function toggle() {
+        var temp = document.getElementById("password");
+        if (temp.type === "password") {
+            temp.type = "text";
+        }
+        else {
+            temp.type = "password";
+        }
+    }
+
+    function validateUser() {
+        let users = [
+            {
+                username: "Sunny",
+                password: "san_nad@345"
+            },
+            {
+                username: "Jameela",
+                password: "jam_haf@123"
+            },
+            {
+                username: "Maawin",
+                password: "m_bhai456"
+            },
+            {
+                username: "Jayshree",
+                password: "jay_z"
+            },
+            {
+                username: "Delisha",
+                password: "delishous@45"
+            },
+            {
+                username: "Abdulla",
+                password: "HDs_15"
+            },
+            {
+                username: "Vandana",
+                password: "inMetro72"
+            }
+        ]
+
+        var user = document.getElementById("username").value;
+        var pass = document.getElementById("password").value;
+
+        var testUser, testPass;
+
+        for (var i = 0; i < users.length; i++) {
+            testUser = users[i].username;
+            testPass = users[i].password;
+
+            if (testUser == user && testPass == pass) {
+                return true;
+            }
+        }
+
+        document.getElementById("passwordUsernameError").innerHTML = "Invalid username or password.";
+        return false;
+    }
+
+    function forgotPassword() {
+        var email = prompt("Please enter your verification email", "Enter your verification email here...");
+        if (email != null) {
+            alert("Email Sent!");
+        }
+    }
+</script>
